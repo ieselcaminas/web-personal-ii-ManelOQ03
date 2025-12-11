@@ -29,6 +29,9 @@
 
     </head>
     <body>
+      {{ include ('page/partials/_navigation.html.twig')}}
+
+    
         {% block body %}
         
         <div class="example-wrapper">
@@ -41,6 +44,60 @@
         </div>
 
         {% endblock %}
+        
+        <!-- info section -->
+    <section class="info_section layout_padding">
+      <div class="container layout_padding-top  layout_padding2-bottom">
+          <div class="logo-box">
+            <a href="{{ path('index') }}">
+              <img src="images/info-logo.png" alt="">
+            </a>
+          </div>
+          <div class="info_items">
+            <a href="https://www.google.com/maps/@39.9806432,-0.0287783,3a,75y,112.57h,90t/data=!3m7!1e1!3m5!1seSYatAvRHKsGozzktpdPLQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3DeSYatAvRHKsGozzktpdPLQ%26yaw%3D112.571655!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTIwOC4wIKXMDSoASAFQAw%3D%3D">
+              <div class="item ">
+                <div class="img-box box-1">
+                  <img src="images/location-white.png" alt="" />
+                </div>
+                <div class="detail-box">
+                  <p>
+                    It is a long established fact that a reader will be distracted by the readable content of a page when
+                    looking at its layout. The point of using Lorem
+                  </p>
+                </div>
+              </div>
+            </a>
+            <a href="">
+              <div class="item ">
+                <div class="img-box box-3">
+                  <img src="images/envelope-white.png" alt="" />
+                </div>
+                <div class="detail-box">
+                  <p>
+                    demo@gmail.com
+                  </p>
+                </div>
+              </div>
+            </a>
+            <a href="">
+              <div class="item ">
+                <div class="img-box box-2">
+                  <img src="images/telephone-white.png" alt="" />
+                </div>
+                <div class="detail-box">
+                  <p>
+                    +02 1234567890
+                  </p>
+                </div>
+              </div>
+            </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- end info_section -->
+
         <!-- footer section -->
         <section class="container-fluid footer_section">
             <p>

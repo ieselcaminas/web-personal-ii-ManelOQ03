@@ -32,7 +32,7 @@ final class PageController extends AbstractController
         return $this->render('page/blog.html.twig', []);
     }
 
-    #[Route('/single_post', name: 'single_post')]
+    #[Route('/single_post/{codigo}?1', name: 'single_post')]
     public function single_post(): Response
     {
         return $this->render('page/single_post.html.twig', []);
