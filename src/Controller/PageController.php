@@ -60,10 +60,4 @@ final class PageController extends AbstractController
         return $this->render('page/single_post.html.twig', []);
     }
     
-    #[Route('/admin/images', name: 'app_images')]
-    public function images(): Response
-    {
-        return $this->render('admin/images.html.twig', []);
-    }
-
 }
