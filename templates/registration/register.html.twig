@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+{% block body%}
+  <!-- register section -->
+
+  <section class="contact_section layout_padding">
+    <div class="container">
+      <div class="col-md-6">
+        <div class="d-flex mb-4 ml-4 ml-md-0">
+          <h2 class="custom_heading text-center">
+            REGISTER
+          </h2>
+        </div>
+        {{ form_start(registrationForm, {'attr': {'class':'form-horizontal'}}) }}
+        {{ form_errors(registrationForm) }}
+          <div>
+            {{ form_row(registrationForm.email, {'attr': {'class':'form-control'}}) }}
+          </div>
+          <div>
+            {{ form_row(registrationForm.name, {'attr': {'class':'form-control'}}) }}
+          </div>
+          <div>
+            {{ form_row(registrationForm.plainPassword,{
+                label: 'Password'
+            }, {'attr': {'class':'form-control'}}) }}
+          </div>
+          <div>
+            {{ form_row(registrationForm.agreeTerms) }}
+            <button type="submit" class="btn">Register</button>
+          </div>
+        {{ form_end(registrationForm) }}
+      </div>
+    </div>
+  </section>
+
+  <!-- end register section -->
+
+{% endblock %}

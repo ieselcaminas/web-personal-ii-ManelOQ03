@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello PageController!{% endblock %}
+{% block title %}CONTACT US{% endblock %}
 {% block body%}
   <!-- contact section -->
 
@@ -12,28 +12,27 @@
             CONTACT US
           </h2>
         </div>
-        <form action="">
+        {{ form_start(form, {'attr': {'class':'form-horizontal'}}) }}
+        {{ form_errors(form) }}
           <div>
-            <input type="text" placeholder="First Name" />
+            {{ form_row(form.firstName, {'attr': {'class':'form-control'}}) }}
           </div>
           <div>
-            <input type="email" placeholder="Last name" />
+            {{ form_row(form.lastName, {'attr': {'class':'form-control'}}) }}
           </div>
           <div>
-            <input type="email" placeholder="Email" />
+            {{ form_row(form.email, {'attr': {'class':'form-control'}}) }}
           </div>
           <div>
-            <input type="text" placeholder="Subject" />
+            {{ form_row(form.subject, {'attr': {'class':'form-control'}}) }}
           </div>
           <div>
-            <input type="text" class="message-box" placeholder="Message" />
+            {{ form_row(form.message, {'attr': {'class':'form-control'}}) }}
           </div>
           <div class="d-flex justify-content-center mt-4 ">
-            <button>
-              SEND
-            </button>
+            {{ form_row(form.Send, {'attr': {'class':'pull-right btn btn-lg sr-button'}}) }}
           </div>
-        </form>
+        {{ form_end(form) }}
       </div>
     </div>
 
