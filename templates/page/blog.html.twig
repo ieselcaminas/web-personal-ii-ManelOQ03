@@ -1,5 +1,25 @@
 {% extends 'base.html.twig' %}
 {% block title%}blog{% endblock %}
 {% block body%}
-
+<div class="container">
+    <div class="detail">
+      <br>
+      <h2 class="custom_heading">
+        Posts
+      </h2>
+      <br>
+      <form class="" action='{{ path('blog_buscar') }}'>
+        <input type="text" class="form-control" style="display:unset; width:85%" placeholder="Research" name='searchTerm'>
+        <button type='submit' class="btn btn-primary btn-danger"><i class="fa fa-search">Buscar</i>
+        </button>
+      </form>
+      <br>
+      <a href="/blog/new" class="button">Nuevo Post</a>
+      <br>
+      <br>
+      {% for post in posts %}
+      {{ include ('page/partials/_post.html.twig', {'post': post}) }}
+      {% endfor %}
+    </div>
+</div>
 {% endblock %}

@@ -1,0 +1,10 @@
+ <div>
+    <hr>
+        <a href="{{ path('single_post', {'slug':recent.slug}) }}">{{ recent.title }}</a>
+        <h5> By <span>{{ recent.postUser.name }}</span></h5>
+        <p>{{ recent.publishedAt | date('d') }} {{ recent.publishedAt | date('F') }}</p>
+        <p><i class="fa fa-clock-o sr-icons"></i>
+         {{ recent.publishedAt | date('h') }}
+         {{ recent.publishedAt | date('A') }}
+         </p>
+</div>

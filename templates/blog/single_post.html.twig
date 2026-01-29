@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+{% block title%}blog{% endblock %}
+{% block body%}
+{% if not post %}
+<h2>Post not found</h2>
+{% else %}
+<br>
+<h2>{{post.title}}</h2>
+<br>
+<img src="{{asset('images/blog/' ~ post.image) }}">
+<br>
+{{post.content}}
+<br>
+<br>
+<strong>- By {{post.postUser.name}}</strong>
+<br>
+{{post.publishedAt | date('d') }} {{ post.publishedAt | date('F') }} |
+<a class="page-scroll" href="#form">COMMENT</a> <i class="fa fa-comments sr-icons"></i> {{post.numComments}} |
+<a href="{{ path('post_like', {slug: post.slug}) }}">LIKE</a> <i class="fa fa-heart sr-icons"></i> {{post.numLikes}}
+<br>
+<br>
+
+<h3>Comentarios:</h3>
+{% for comentario in comentarios %}
+ {{ include ('page/partials/_comentarios_post.html.twig', {'comentario': comentario}) }}
+{% endfor %}
+
+<br>
+<br>
+
+
+<h3>Comenta:</h3>
+{{ include ('page/partials/_post_comments.html.twig') }}
+<br>
+<br>
+
+<h3>Post Recientes:</h3>
+{% for recent in recents %}
+ {{ include ('page/partials/_recent_post.html.twig', {'recent': recent}) }}
+{% endfor %}
+
+{% endif %}
+
+{% endblock %}

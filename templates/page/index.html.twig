@@ -3,14 +3,6 @@
 {% block title %}Herbal{% endblock %}
 
 {% block body %}
-<head>
-  <title>Medi</title>
-</head>
-
-<body>
-  
-
-
   <!-- about section -->
   <section class="about_section layout_padding">
     <div class="about_container">
@@ -24,7 +16,7 @@
             looking at its layout. The point of g it
           </p>
           <div>
-            <a href="">
+            <a href="{{ path('about') }}">
               Read More
             </a>
           </div>
@@ -39,39 +31,50 @@
     </div>
   </section>
 
-
   <!-- end about section -->
 
-  <!-- product section -->
+  <!-- blog section -->
   <section class="product_section layout_padding">
     <div class="d-flex justify-content-center">
       <h2 class="custom_heading">
-        Our Products
+        Blog images
       </h2>
     </div>
     <div class="container layout_padding2">
-      <div class="img-box box-1">
-        <img src="images/p-1.jpg" alt="">
+      <div class="table-responsive">
+        <table class="table text-center">
+          <thead>
+            <tr>
+              {% for category in categories %}
+                <td><a class="link {{loop.first ? 'active' : ''}}" href="#category{{category.id}}" data-toggle="tab">{{category.name}}</a></td>
+              {% endfor %}
+            </tr>
+          </thead>
+        </table>
+        <hr>
       </div>
-      <div class="img-box box-2">
-        <img src="images/p-2.jpg" alt="">
-      </div>
-      <div class="img-box box-3">
-        <img src="images/p-3.jpg" alt="">
-      </div>
-      <div class="img-box box-4">
-        <img src="images/p-4.jpg" alt="">
+      <div class="tab-content">
+        {% for category in categories %}
+          <div id="category{{category.id}}" class="tab-pane {{loop.first ? 'active' : ''}}" >
+            <div class="row popup-gallery">
+              {% for image in category.images %}
+                {{ include ('page/partials/_image.html.twig')}}
+              {% endfor %}
+            </div>
+          </div>
+        {% endfor %}
       </div>
     </div>
+    
     <div class="d-flex justify-content-center">
-      <a href="">
+      <a href="{{ path('blog') }}">
         See More
       </a>
     </div>
   </section>
 
 
-  <!-- end product section -->
+  <!-- end blog section -->
 
   <!-- why section -->
 

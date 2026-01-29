@@ -1,0 +1,12 @@
+<div>
+    <hr>
+        <p>En respuesta a <a href="{{ path('single_post', {'slug':post.slug}) }}">{{ post.title }}</a></p>
+        <h5>{{ comentario.name }}</h5>
+        <p>{{ comentario.text }}</p>
+        <p>{{ comentario.publishedAt | date('d') }} | 
+           {{ comentario.publishedAt | date('F') }} |
+           {{ comentario.publishedAt | date('h') }} |
+           {{ comentario.publishedAt | date('A') }}
+        </p>
+        <p>By <span>{{ comentario.email }}</span></p>
+</div>

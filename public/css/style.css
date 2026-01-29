@@ -590,3 +590,14 @@ a:focus {
 
 /* end footer section*/
 /*# sourceMappingURL=style.css.map */
+
+a.button {
+  background-color: #e92c06;
+  padding: 15px 55px;
+  outline: none;
+  border: none;
+  border-radius: 30px;
+  border: 1px solid #e92c06;
+  color: #fff;
+  font-weight: bold;
+}

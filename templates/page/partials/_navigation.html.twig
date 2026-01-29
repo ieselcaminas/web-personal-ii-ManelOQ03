@@ -36,6 +36,9 @@
                   <li class="nav-item">
                     <a class="nav-link" href="{{ path('app_logout') }}">{{ app.user.email }} - Logout</a>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ path('new_post') }}">New post</a>
+                  </li>
                   {% else %}
                   <li class="nav-item">
                     <a class="nav-link" href="{{ path('app_login') }}">Login</a>
